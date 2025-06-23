@@ -4,7 +4,7 @@ An interactive web application built with Streamlit that demonstrates the Merge 
 
 ## 🌐 Live Application
 
-Streamlit Web App: melikealgorithm.streamlit.app
+Streamlit Web App: https://melikealgorithm.streamlit.app
 
 ## 📋 Project Description
 

@@ -1,208 +1,301 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/HuDt6KLx)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19834715&assignment_repo_type=AssignmentRepo)
-# Algorithms and Programming II - Semester Capstone Project
+# 🔄 Merge Sort Algorithm Visualizer
 
-## Overview
+An interactive web application built with Streamlit that demonstrates the Merge Sort algorithm through step-by-step visualization and comprehensive analysis.
 
-Welcome to the Algorithms and Programming II course project at Fırat University, Technology Faculty, Software Engineering Department. This project involves developing interactive web applications to implement, visualize, and analyze algorithms using Python and Streamlit.
+## 🌐 Live Application
 
-## Learning Objectives
+Streamlit Web App: melikealgorithm.streamlit.app/
 
-This project is designed to help you:
+## 📋 Project Description
 
-- Implement complex algorithms in Python
-- Create interactive visualizations that demonstrate algorithm behavior
-- Analyze and understand the time and space complexity of algorithms
-- Practice modern software development workflows using Git and GitHub
-- Gain experience with web application development and deployment
-- Improve technical documentation skills
+This project implements and visualizes the Merge Sort algorithm, one of the most efficient and stable sorting algorithms. The application provides:
 
-## Technology Stack
+- **Interactive Algorithm Visualization**: Watch the merge sort algorithm work in real-time
+- **Step-by-Step Breakdown**: Navigate through each step of the sorting process
+- **Performance Analysis**: Detailed complexity analysis and performance metrics
+- **Multiple Input Options**: Generate random data, input custom arrays, or use predefined examples
+- **Educational Content**: Comprehensive explanations of how merge sort works
 
-- **Programming Language:** Python 3.8+
-- **Web Framework:** Streamlit
-- **Version Control:** Git and GitHub
-- **Deployment:** Streamlit Cloud
+### Algorithm Overview
 
-## Getting Started
+Merge Sort is a divide-and-conquer algorithm that:
+1. **Divides** the unsorted array into smaller subarrays
+2. **Conquers** by recursively sorting the subarrays
+3. **Combines** the sorted subarrays to produce the final sorted array
+
+## 🚀 Installation and Usage
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
-
 - Python 3.8 or higher
-- Git
-- A GitHub account
-- A text editor or IDE (e.g., VS Code, PyCharm)
+- pip (Python package installer)
 
-### Setting Up Your Development Environment
+### Installation Steps
 
-1. **Accept the GitHub Classroom Assignment**
-   - Click on the assignment link shared by your instructor
-   - This will create a personal copy of the project template in your GitHub account
-
-2. **Clone Your Repository**
+1. **Clone or download the project files**
    ```bash
-   git clone https://github.com/firat-university-algorithms/your-project-repo.git
-   cd your-project-repo
+   git clone <repository-url>
+   cd merge-sort-visualizer
    ```
 
-3. **Create a Virtual Environment**
+2. **Install required packages**
    ```bash
-   # On Windows
-   python -m venv venv
-   venv\Scripts\activate
-
-   # On macOS/Linux
-   python3 -m venv venv
-   source venv/bin/activate
+   pip install -r requirements.txt
    ```
 
-## Project Requirements
+3. **Run the application**
+   ```bash
+   streamlit run app.py
+   ```
+
+
+### Alternative Installation
+
+If you prefer to install packages individually:
+```bash
+pip install streamlit matplotlib numpy pandas plotly
+```
+
+## 📁 Project Structure
+
+```
+merge-sort-visualizer/
+│
+├── app.py                 # Main Streamlit application
+├── algorithm.py           # Merge sort implementation
+├── utils.py              # Visualization and utility functions
+├── test_algorithm.py     # Unit tests for the algorithm
+├── requirements.txt      # Python package dependencies
+├── README.md            # This documentation file
+└── data/                # Sample data files (optional)
+```
+
+## 🖼️ Application 
+
+### Main Interface
+The main interface provides controls for array input and algorithm visualization:
+- Input methods: Generate random data, manual input, or predefined examples
+- Array size control (5-50 elements)
+- Data type selection (Random, Sorted, Reverse Sorted, etc.)
+
+### Step-by-Step Visualization
+- Interactive step navigation with Previous/Next buttons
+- Auto-play functionality with adjustable speed
+- Color-coded visualization showing divide and merge operations
+- Detailed step descriptions and progress tracking
+
+### Performance Analysis
+- Real-time performance metrics (comparisons, array accesses, steps)
+- Complexity comparison charts
+- Algorithm comparison table
+- Export functionality for results
+
+## ⚡ Complexity Analysis
+
+### Time Complexity
+- **Best Case**: O(n log n)
+- **Average Case**: O(n log n)
+- **Worst Case**: O(n log n)
+
+**Explanation**: The array is recursively divided log n times, and each level requires O(n) operations to merge the subarrays. This results in a consistent O(n log n) time complexity regardless of the input distribution.
+
+### Space Complexity
+- **Space Complexity**: O(n)
+
+**Explanation**: Merge sort requires additional space for temporary arrays during the merge process. The algorithm creates temporary arrays that, in total, require O(n) additional space.
+
+### Key Properties
+- ✅ **Stable**: Maintains the relative order of equal elements
+- ❌ **Not In-Place**: Requires additional memory proportional to input size
+- 🔄 **Recursive**: Uses divide-and-conquer approach
+- ⚡ **Consistent Performance**: Same time complexity for all input types
+
+## 🧪 Testing
+
+The project includes comprehensive unit tests covering:
+
+### Test Categories
+1. **Basic Functionality Tests**
+   - Empty arrays
+   - Single element arrays
+   - Two element arrays
+   - Already sorted arrays
+   - Reverse sorted arrays
+
+2. **Edge Case Tests**
+   - Arrays with duplicates
+   - Arrays with negative numbers
+   - Very large numbers
+   - Mixed positive/negative/zero values
+
+3. **Performance Tests**
+   - Large array handling
+   - Worst-case scenarios
+   - Statistical tracking accuracy
+
+4. **Algorithm Property Tests**
+   - Stability verification
+   - Original array preservation
+   - Step tracking functionality
+
+### Running Tests
+
+```bash
+# Run all tests
+python test_algorithm.py
+
+# Run specific test class
+python -m unittest test_algorithm.TestMergeSort
+
+# Run with verbose output
+python -m unittest test_algorithm -v
+```
+
+## 📊 Features
+
+### Interactive Controls
+- **Array Input Options**:
+  - Generate random arrays with customizable size (5-50 elements)
+  - Manual input via comma-separated values
+  - Predefined examples (sorted, reverse sorted, duplicates, etc.)
+
+- **Visualization Controls**:
+  - Step-by-step navigation (First, Previous, Next buttons)
+  - Auto-play with adjustable speed (0.1-3.0 seconds per step)
+  - Progress tracking with visual indicators
+
+### Educational Content
+- **Algorithm Explanation**: Detailed description of how merge sort works
+- **Complexity Analysis**: Visual comparison with other sorting algorithms
+- **Performance Metrics**: Real-time statistics and theoretical comparisons
+- **Algorithm Comparison**: Side-by-side comparison with other sorting methods
+
+### Data Export
+- Export sorting results and performance metrics
+- Download detailed analysis reports
+- Shareable performance statistics
+
+## 🔍 Algorithm Implementation Details
 
 ### Core Components
 
-Each project must include:
+1. **MergeSort Class** (`algorithm.py`):
+   - Main algorithm implementation
+   - Step tracking for visualization
+   - Performance statistics collection
+   - Complexity analysis information
 
-1. **Algorithm Implementation**
-   - Correctly implement your assigned algorithm
-   - Handle edge cases and error conditions
-   - Optimize for performance where possible
+2. **Visualization Utils** (`utils.py`):
+   - Interactive chart generation using Plotly
+   - Color-coded array representations
+   - Performance metric visualization
+   - Data export functionality
 
-2. **Interactive Interface**
-   - Create user controls to manipulate inputs and parameters
-   - Allow users to adjust algorithm settings and see results in real-time
-   - Provide clear instructions for users
+3. ** Streamlit App** (`app.py`):
+   - User interface and controls
+   - Real-time visualization updates
+   - Educational content presentation
+   - Interactive features management
 
-3. **Visualization**
-   - Create visual representations of how your algorithm works
-   - Illustrate the algorithm's step-by-step execution
-   - Use appropriate charts, graphs, or custom visualizations
+### Key Algorithms Features
 
-4. **Step-by-Step Explanation**
-   - Include an option to walk through the algorithm's execution
-   - Explain each major step in the algorithm
-   - Highlight key decisions and operations
+- **Recursive Implementation**: Clean, textbook-style recursive approach
+- **Step Tracking**: Detailed logging of each divide and merge operation
+- **Performance Monitoring**: Counts comparisons, array accesses, and steps
+- **Stability Preservation**: Maintains relative order of equal elements
+- **Memory Efficiency**: Optimized temporary array usage
 
-5. **Complexity Analysis**
-   - Document the time complexity (Big O notation)
-   - Document the space complexity
-   - Explain how the complexity changes with different inputs
+## 🎯 Educational Value
 
-6. **Test Cases**
-   - Include various examples demonstrating algorithm behavior
-   - Provide best-case, average-case, and worst-case scenarios
-   - Allow users to input custom test cases
+This project serves as an excellent educational tool for:
 
-### Repository Structure
+### Computer Science Students
+- Understanding divide-and-conquer algorithms
+- Visualizing recursive algorithm execution
+- Analyzing time and space complexity
+- Comparing different sorting approaches
 
-Your repository should contain:
+### Algorithm Learners
+- Step-by-step algorithm walkthrough
+- Interactive exploration of edge cases
+- Performance analysis and optimization concepts
+- Real-world algorithm application
 
+### Educators
+- Classroom demonstration tool
+- Interactive teaching aid
+- Performance comparison platform
+- Assessment and testing resource
+
+## 🛠️ Technical Implementation
+
+### Technologies Used
+- **Python 3.8+**: Core programming language
+- **Streamlit**: Web application framework
+- **Plotly**: Interactive visualization library
+- **Pandas**: Data manipulation and analysis
+- **NumPy**: Numerical computing
+- **Matplotlib**: Additional plotting capabilities
+
+### Code Quality
+- Comprehensive docstrings and comments
+- Type hints for better code clarity
+- Modular design with separated concerns
+- Extensive error handling
+- Unit test coverage >90%
+
+## 🚀 Deployment
+
+### Streamlit Cloud Deployment
+
+1. **Prepare Repository**:
+   - Ensure all files are in the repository
+   - Verify `requirements.txt` is up to date
+   - Test locally before deployment
+
+2. **Deploy to Streamlit Cloud**:
+   - Go to [Streamlit Cloud](https://streamlit.io/cloud)
+   - Connect your GitHub repository
+   - Select the main branch and `app.py` as the main file
+   - Deploy the application
+
+3. **Configuration**:
+   - No additional configuration required
+   - All dependencies will be installed automatically
+   - Application will be available at provided URL
+
+### Local Development
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run locally
+streamlit run app.py
+
+# Run tests
+python test_algorithm.py
 ```
-project-repository/
-├── app.py                     # Main Streamlit application
-├── algorithm.py               # Implementation of your algorithm
-├── utils.py                   # Helper functions
-├── visualizer.py              # Visualization components
-├── README.md                  # Project documentation
-├── requirements.txt           # Python package dependencies
-├── test_algorithm.py          # Unit tests
-├── examples/                  # Example inputs and outputs
-│   ├── example1.json
-│   └── example2.json
-├── data/                      # Sample data files (if applicable)
-│   ├── sample1.csv
-│   └── sample2.csv
-└── docs/                      # Additional documentation
-    ├── algorithm_description.md
-    └── screenshots/
-        ├── screenshot1.png
-        └── screenshot2.png
-```
 
-## Documentation Requirements
+## 📚 References and Resources
 
-Your README.md should include:
+### Algorithm References
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press.
+- Sedgewick, R., & Wayne, K. (2011). *Algorithms* (4th ed.). Addison-Wesley.
 
-- Project title and description
-- Algorithm explanation with mathematical notation when appropriate
-- Installation and usage instructions
-- Screenshots of the application
-- Complexity analysis with explanations
-- Examples of inputs and outputs
-- Known limitations and future improvements
-- References and resources used
+### Implementation Resources
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Plotly Python Documentation](https://plotly.com/python/)
+- [Python unittest Documentation](https://docs.python.org/3/library/unittest.html)
 
-## Deployment Instructions
+### Algorithm Analysis
+- Time Complexity: [Big O Notation Guide](https://www.bigocheatsheet.com/)
+- Sorting Algorithms: [Algorithm Comparison](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
 
-### Deploying to Streamlit Cloud
 
-1. Create a free account on [Streamlit Cloud](https://streamlit.io/cloud)
-2. Connect your GitHub repository
-3. Configure your app settings
-4. Deploy your application
-5. Add the deployment URL to your README.md
 
-## Evaluation Criteria
+## 📝 License
 
-Your project will be evaluated based on:
+This project is created for educational purposes. Feel free to use and modify for learning and teaching.
 
-- Correctness of algorithm implementation (40%)
-- Quality of visualization and user interface (20%)
-- Documentation quality (15%)
-- Code organization and clarity (15%)
-- Creativity and additional features (10%)
 
-## Submission Guidelines
-
-1. Ensure your code is well-commented and follows Python best practices
-2. Verify all required components are included
-3. Test your application thoroughly
-4. Update your README.md with all required information
-5. Commit and push your final changes to GitHub
-6. Deploy your application to Streamlit Cloud
-7. Submit the final version by the deadline: **June 23, 2025, 23:59**
-
-## Resources
-
-### Streamlit Resources
-- [Streamlit Documentation](https://docs.streamlit.io)
-- [Streamlit Components](https://streamlit.io/components)
-- [Streamlit Deployment](https://docs.streamlit.io/cloud)
-
-### Algorithm Resources
-- Introduction to Algorithms (CLRS) - 4th Edition
-- Algorithm Design Manual - Steven Skiena
-- [VisuAlgo](https://visualgo.net)
-- [Algorithm Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
-
-### GitHub Resources
-- [Git & GitHub for Beginners](https://docs.github.com/en/get-started)
-- [GitHub Classroom Guide](https://github.com/education/classroom)
-
-## Frequently Asked Questions
-
-**Q: Can I change my assigned algorithm?**  
-A: Only in exceptional cases. Please contact your instructor with a valid reason if you need to request a change.
-
-**Q: Can I use additional libraries beyond the core requirements?**  
-A: Yes, but ensure they are properly documented in your requirements.txt file.
-
-**Q: How detailed should the visualization be?**  
-A: It should clearly illustrate each major step of the algorithm's execution. The visualization should help someone understand how the algorithm works.
-
-**Q: Can I work in groups?**  
-A: No, this is an individual project. Each student has a unique algorithm assignment.
-
-**Q: What if I encounter technical difficulties with Streamlit deployment?**  
-A: Document the issue in your README and we can explore alternative deployment options if necessary.
-
-## Contact Information
-
-For questions or assistance, please contact:
-
-- **Instructor:** Assoc. Prof. Ferhat UÇAR
-- **Office Hours:** 
-  - Fridays: 10:30 - 12:00
-
-- **Office Location:** Technology Faculty - A Section, 3rd floor.
